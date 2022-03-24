@@ -1,17 +1,17 @@
 module.exports = {
   siteMetadata: {
-    title: "My First Gatsby Site",
+    title: 'My First Gatsby Site',
   },
   plugins: [
-    "gatsby-plugin-image",
-    "gatsby-plugin-sharp",
+    'gatsby-plugin-image',
+    'gatsby-plugin-sharp',
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: `blog`,
+        name: 'blog',
         path: `${__dirname}/blog`,
-      }
+      },
     },
-    "gatsby-plugin-mdx",
+    'gatsby-plugin-mdx',
   ],
-}
+};

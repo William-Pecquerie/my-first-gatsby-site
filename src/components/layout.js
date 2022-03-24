@@ -1,18 +1,18 @@
 // Step 1: Import React
-import * as React from 'react'
-import {Link, useStaticQuery, graphql} from 'gatsby'
+import * as React from 'react';
+import { Link, useStaticQuery, graphql } from 'gatsby';
 import {
   container,
   heading,
   navLinks,
   navLinkItem,
   navLinkText,
-  siteTitle
-} from './layout.module.css'
+  siteTitle,
+} from './layout.module.css';
 
 // Step 2: Define your component
-const Layout = ({ pageTitle, children }) => {
-    const data = useStaticQuery(graphql`
+function Layout({ pageTitle, children }) {
+  const data = useStaticQuery(graphql`
     query {
       site {
         siteMetadata {
@@ -20,10 +20,16 @@ const Layout = ({ pageTitle, children }) => {
         }
       }
     }
-  `)
+  `);
   return (
     <div className={container}>
-      <title>{pageTitle} | {data.site.siteMetadata.title}</title>
+      <title>
+        {pageTitle}
+        {' '}
+        |
+        {' '}
+        {data.site.siteMetadata.title}
+      </title>
       <header className={siteTitle}>{data.site.siteMetadata.title}</header>
       <nav>
         <ul className={navLinks}>
@@ -49,8 +55,8 @@ const Layout = ({ pageTitle, children }) => {
         {children}
       </main>
     </div>
-  )
+  );
 }
 
 // Step 3: Export your component
-export default Layout
+export default Layout;
